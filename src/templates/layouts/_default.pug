@@ -1,0 +1,75 @@
+- app = { name: 'Jungle Oats', description: 'A platform game I made way back in 2005 with Freehand MX and Flash MX.', url: 'http://jungle-oats.surge.sh', image: 'images/jungleoats.png' }
+
+- author = { name: 'Lance Guyatt', description: '', url: 'http://lanceguyatt.com', email: 'lance@lanceguyatt.com' }
+
+doctype html
+html(
+  dir='ltr'
+  lang='en'
+  itemscope
+  prefix='og: http://ogp.me/ns schema: http://schema.org/'
+  itemtype='http://schema.org/SoftwareApplication'
+)
+  head
+    meta(charset='utf-8')
+
+    title=app.name
+
+    meta(itemprop='name' content=app.name)
+    meta(itemprop='description' content=app.description)
+    meta(itemprop='url' content=app.url)
+    meta(itemprop='image' content=`${app.url}/${app.image}`)
+    meta(itemprop='dateCreated' content='2005-11-21')
+    meta(itemprop='datePublished' content='2013-10-17')
+
+    meta(property='og:title' content=app.name)
+    meta(property='og:description' content=app.description)
+    meta(property='og:url' content=app.url)
+    meta(property='og:image' content=`${app.url}/${app.image}`)
+    meta(property='og:site_name' content=app.name)
+    meta(property='og:type' content='game')
+
+    meta(name='twitter:title' content=app.name)
+    meta(name='twitter:description' content=app.description)
+    meta(name='twitter:image:src' content=`${app.url}/${app.image}`)
+    meta(name='twitter:card' content='summary')
+    meta(name='twitter:creator' content='@lanceguyatt')
+    //- meta(name='twitter:site' content='http://lanceguyatt.com/')
+    //- link(rel='author', href='https://plus.google.com/102432796825488724849/')
+    //- link(rel='author', href='http://lanceguyatt.com/humans.txt')
+    //- link(rel='shortlink' href='http://goo.gl/mh3crZ')
+    style.
+
+      body {
+        color: #333;
+        font: 1em/1.5 Helvetica, Arial, "Nimbus Sans L", sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        -webkit-font-smoothing: subpixel-antialiased;
+        margin: 0;
+        -webkit-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+        text-size-adjust: none;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .o-container {
+        max-width: 50em;
+        margin: 2em auto 0;
+        text-align:center;
+      }
+
+      .o-container img {
+        display: block;
+        margin: 0 auto 2em;
+      }
+
+      footer { margin-top: 4em; }
+
+  body
+
+    block body
