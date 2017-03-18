@@ -2,17 +2,21 @@
   "name": "jungleoats",
   "version": "1.0.0",
   "description": "A platform game I made way back in 2005 with Freehand MX and Flash MX.",
+  "author": "Lance Guyatt <lance@lanceguyatt.com>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:lanceguyatt/jungleoats.git"
+  },
   "private": "true",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node app.js",
     "pug": "pug src/templates/views --out build --obj data/index.json",
-    "cssnano": "cssnano build/styles/app.css build/styles/app.css",
     "styles": "postcss src/styles/app.css -d build/styles --no-map true",
+    "cssnano": "cssnano build/styles/app.css build/styles/app.css",
     "build": "NODE_ENV=production && npm run pug && npm run styles && npm run cssnano",
     "deploy": "npm run build && surge -p build -d jungleoats.surge.sh"
   },
-  "author": "Lance Guyatt <lance@lanceguyatt.com>",
   "license": "ISC",
   "dependencies": {
     "serve": "^5.0.3"

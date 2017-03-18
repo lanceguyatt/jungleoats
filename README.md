@@ -1,3 +1,4 @@
 # Jungle Oats
 
-> Flash game I made in 2005
+> A platform game I made way back in 2005 with Freehand MX and Flash MX. Edit
+Add topics
