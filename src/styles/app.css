@@ -1,0 +1,30 @@
+@import '_normalize';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+
+object { display: block; }
+
+.o-container {
+  max-width: 800px;
+}
+
+.u-mx-auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.u-center { text-align: center; }
+.u-flex { display: flex; }
+.u-flex-column { flex-direction: column; }
+.u-h100 { height: 100%; }
+.u-hide { display: none;}
+.u-items-center { align-items: center; }
+.u-justify-center { justify-content: center; }

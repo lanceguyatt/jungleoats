@@ -1,8 +1,4 @@
-- app = { name: 'Jungle Oats', description: 'A platform game I made way back in 2005 with Freehand MX and Flash MX.', url: 'http://jungle-oats.surge.sh', image: 'images/jungleoats.png' }
-
-- author = { name: 'Lance Guyatt', description: '', url: 'http://lanceguyatt.com', email: 'lance@lanceguyatt.com' }
-
-doctype html
+doctype
 html(
   dir='ltr'
   lang='en'
@@ -11,65 +7,55 @@ html(
   itemtype='http://schema.org/SoftwareApplication'
 )
   head
-    meta(charset='utf-8')
 
-    title=app.name
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+
+    block title
+
+      title=app.name
+
+    meta(name='viewport' content='width=device-width, initial-scale=1')
 
     meta(itemprop='name' content=app.name)
     meta(itemprop='description' content=app.description)
     meta(itemprop='url' content=app.url)
     meta(itemprop='image' content=`${app.url}/${app.image}`)
-    meta(itemprop='dateCreated' content='2005-11-21')
-    meta(itemprop='datePublished' content='2013-10-17')
+    meta(itemprop='dateCreated' content=app.dateCreated)
+    meta(itemprop='datePublished' content=app.datePublished)
+
+    meta(itemprop='operatingSystem' content='Browser')
+    meta(itemprop='applicationCategory' content='Platform game')
+    meta(itemprop='offers' content='Free')
+    meta(itemprop='aggregateRating' content=5)
 
     meta(property='og:title' content=app.name)
     meta(property='og:description' content=app.description)
     meta(property='og:url' content=app.url)
     meta(property='og:image' content=`${app.url}/${app.image}`)
+    meta(property='og:image:width' content=492)
+    meta(property='og:image:height' content=492)
     meta(property='og:site_name' content=app.name)
-    meta(property='og:type' content='game')
+    meta(property='og:type' content='website')
 
     meta(name='twitter:title' content=app.name)
     meta(name='twitter:description' content=app.description)
     meta(name='twitter:image:src' content=`${app.url}/${app.image}`)
     meta(name='twitter:card' content='summary')
-    meta(name='twitter:creator' content='@lanceguyatt')
-    //- meta(name='twitter:site' content='http://lanceguyatt.com/')
-    //- link(rel='author', href='https://plus.google.com/102432796825488724849/')
-    //- link(rel='author', href='http://lanceguyatt.com/humans.txt')
-    //- link(rel='shortlink' href='http://goo.gl/mh3crZ')
-    style.
+    meta(name='twitter:creator' content=author.twitter)
 
-      body {
-        color: #333;
-        font: 1em/1.5 Helvetica, Arial, "Nimbus Sans L", sans-serif;
-        font-style: normal;
-        font-weight: 300;
-        -webkit-font-smoothing: subpixel-antialiased;
-        margin: 0;
-        -webkit-text-size-adjust: none;
-        -ms-text-size-adjust: none;
-        text-size-adjust: none;
-      }
+    link(rel='icon' sizes='180x180' href='apple-touch-icon.png')
+    link(rel='icon' type='image/png' href='favicon-32x32.png' sizes='32x32')
+    link(rel='icon' type='image/png' href='favicon-16x16.png' sizes='16x16')
+    link(rel='manifest' href='manifest.json')
 
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
+    meta(name='apple-mobile-web-app-title' content=app.name)
+    meta(name='application-name' content=app.name)
 
-      .o-container {
-        max-width: 50em;
-        margin: 2em auto 0;
-        text-align:center;
-      }
-
-      .o-container img {
-        display: block;
-        margin: 0 auto 2em;
-      }
-
-      footer { margin-top: 4em; }
+    link(rel='stylesheet' href=`${paths.styles}app.css`)
 
   body
 
     block body
+
+    block scripts

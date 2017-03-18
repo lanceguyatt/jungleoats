@@ -2,32 +2,31 @@ extends ../layouts/_default
 
 block body
 
-  main
+  main(class='u-flex u-flex-column u-items-center u-justify-center u-h100')
 
     article(class='o-container')
-
-      header(hidden)
+      header(class='u-hide')
         h1=app.name
 
-      script(src='//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js')
-      script.
-        swfobject.embedSWF('jungleoats.swf', 'main', '800', '600', '6.0.0');
+      div(id='jungleoats')
+        img(
+          src=`${paths.images}jungleoats.png`
+          width=492
+          height=492
+          alt='This page requires Flash'
+          class='u-mx-auto u-block u-mb4'
+        )
 
-      img(src='jungleoats.png' width=492 height=492 alt='This page requires Flash')
+      footer(class='u-hide' itemprop='author copyrightHolder' itemscope itemtype='http://schema.org/Person')
+        meta(itemprop='name' content=author.name)
+        meta(itemprop='description' content=author.description)
+        meta(itemprop='jobTitle' content=author.jobTitle)
+        meta(itemprop='url' content=author.url)
+        meta(itemprop='email' content=author.email)
+        meta(itemprop='image' content='http://lanceguyatt.com/images/share.png')
 
-      p
-        strong This page requires flash...sorry!
+append scripts
 
-      footer
-        | Copyright &copy; 
-        span(itemprop='copyrightYear') 2013
-        |  
-        span(itemprop='author copyrightHolder', itemscope='', itemtype='http://schema.org/Person')
-          a(href='http://lanceguyatt.com/') Lance Guyatt, Web Developer
-          a(href='https://plus.google.com/102432796825488724849/', rel='publisher', hidden='') Find me on Google+
-          meta(itemprop='name', content='Lance Guyatt')
-          meta(itemprop='description', content='I am an award winning Web Developer with 8 years professional experience in developing web applications.')
-          meta(itemprop='jobTitle' content='Web Developer')
-          meta(itemprop='url' content=author.url)
-          meta(itemprop='email' content=author.email)
-          meta(itemprop='image' content='http://lanceguyatt.com/logo.png')
+  script(src=`${paths.scripts}swfobject.js`)
+  script.
+    swfobject.embedSWF('flash/jungleoats.swf', 'jungleoats', 800, 600, '6.0.0');
