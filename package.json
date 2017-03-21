@@ -11,7 +11,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "pug": "pug src/templates/views --out build --obj data/index.json",
+    "pug": "pug src/templates/views --out build --obj data/index.js",
     "styles": "postcss src/styles/app.css -d build/styles --no-map true",
     "cssnano": "cssnano build/styles/app.css build/styles/app.css",
     "build": "NODE_ENV=production && npm run pug && npm run styles && npm run cssnano",
