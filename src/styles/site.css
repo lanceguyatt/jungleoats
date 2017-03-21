@@ -25,6 +25,6 @@ object { display: block; }
 .u-flex { display: flex; }
 .u-flex-column { flex-direction: column; }
 .u-h100 { height: 100%; }
-.u-hide { display: none;}
+.u-hide { display: none; }
 .u-items-center { align-items: center; }
 .u-justify-center { justify-content: center; }

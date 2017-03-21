@@ -6,7 +6,7 @@ block body
 
     article(class='o-container')
       header(class='u-hide')
-        h1=app.name
+        h1=website.name
 
       div(id='jungleoats')
         img(
@@ -17,13 +17,30 @@ block body
           class='u-mx-auto u-block u-mb4'
         )
 
-      footer(class='u-hide' itemprop='author copyrightHolder' itemscope itemtype='http://schema.org/Person')
-        meta(itemprop='name' content=author.name)
-        meta(itemprop='description' content=author.description)
-        meta(itemprop='jobTitle' content=author.jobTitle)
-        meta(itemprop='url' content=author.url)
-        meta(itemprop='email' content=author.email)
-        meta(itemprop='image' content='http://lanceguyatt.com/images/share.png')
+      footer
+
+        div(itemprop='image' itemscope itemtype='http://schema.org/ImageObject')
+          meta(itemprop='contentUrl' content=website.image.url)
+          meta(itemprop='width' content=website.image.width)
+          meta(itemprop='height' content=website.image.height)
+
+        meta(itemprop='dateCreated' content=website.dateCreated)
+        meta(itemprop='datePublished' content=website.datePublished)
+        meta(itemprop='dateModified' content=website.dateModified)
+
+        if author
+
+          div(itemprop='author' itemscope itemtype='http://schema.org/Person')
+            meta(itemprop='name' content=author.name)
+            meta(itemprop='description' content=author.description)
+            meta(itemprop='jobTitle' content=author.jobTitle)
+            meta(itemprop='url' content=author.url)
+            meta(itemprop='email' content=author.email)
+            div(itemprop='image' itemscope itemtype='http://schema.org/ImageObject')
+              meta(itemprop='contentUrl' content=author.image.url)
+              meta(itemprop='width' content=author.image.width)
+              meta(itemprop='height' content=author.image.height)
+
 
 append scripts
 

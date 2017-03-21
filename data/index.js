@@ -1,9 +1,9 @@
-const app = require('./app');
+const website = require('./website');
 const paths = require('./paths');
 const author = require('./author');
 
 module.exports = {
-    app,
+    website,
     paths,
     author,
 };
