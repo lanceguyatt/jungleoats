@@ -1,46 +1,17 @@
 extends ../layouts/_default
 
-block body
+block view
 
-  main(class='u-flex u-flex-column u-items-center u-justify-center u-h100')
+  main
 
-    article(class='o-container')
-      header(class='u-hide')
-        h1=website.name
-
-      div(id='jungleoats')
-        img(
-          src=`${paths.images}jungleoats.png`
-          width=492
-          height=492
-          alt='This page requires Flash'
-          class='u-mx-auto u-block u-mb4'
-        )
-
-      footer
-
-        div(itemprop='image' itemscope itemtype='http://schema.org/ImageObject')
-          meta(itemprop='contentUrl' content=website.image.url)
-          meta(itemprop='width' content=website.image.width)
-          meta(itemprop='height' content=website.image.height)
-
-        meta(itemprop='dateCreated' content=website.dateCreated)
-        meta(itemprop='datePublished' content=website.datePublished)
-        meta(itemprop='dateModified' content=website.dateModified)
-
-        if author
-
-          div(itemprop='author' itemscope itemtype='http://schema.org/Person')
-            meta(itemprop='name' content=author.name)
-            meta(itemprop='description' content=author.description)
-            meta(itemprop='jobTitle' content=author.jobTitle)
-            meta(itemprop='url' content=author.url)
-            meta(itemprop='email' content=author.email)
-            div(itemprop='image' itemscope itemtype='http://schema.org/ImageObject')
-              meta(itemprop='contentUrl' content=author.image.url)
-              meta(itemprop='width' content=author.image.width)
-              meta(itemprop='height' content=author.image.height)
-
+    div(id='jungleoats')
+      img(
+        src=`${paths.images}jungleoats.png`
+        width=492
+        height=492
+        alt='This page requires Flash'
+        class='u-mx-auto u-block u-mb4'
+      )
 
 append scripts
 

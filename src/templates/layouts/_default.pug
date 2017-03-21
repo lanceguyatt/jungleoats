@@ -2,8 +2,6 @@ doctype
 html(
   dir='ltr'
   lang='en'
-  itemscope
-  itemtype='http://schema.org/WebPage'
   prefix='og: http://ogp.me/ns schema: http://schema.org/'
 )
   head
@@ -32,10 +30,6 @@ html(
     meta(name='twitter:card' content='summary')
     meta(name='twitter:creator' content=author.twitter)
 
-    meta(itemprop='name' content=website.name)
-    meta(itemprop='description' content=website.description)
-    meta(itemprop='url' content=website.url)
-
     link(rel='icon' sizes='180x180' href='apple-touch-icon.png')
     link(rel='icon' type='image/png' href='favicon-32x32.png' sizes='32x32')
     link(rel='icon' type='image/png' href='favicon-16x16.png' sizes='16x16')
@@ -43,14 +37,52 @@ html(
 
     link(rel='author' href='humans.txt' type='text/plain')
 
-    meta(name='websitele-mobile-web-website-title' content=website.name)
-    meta(name='websitelication-name' content=website.name)
+    meta(name='apple-mobile-web-website-title' content=website.name)
+    meta(name='application-name' content=website.name)
 
     style
       include ../../../build/styles/site.css
 
   body
 
-    block body
+    div(class='u-flex u-flex-column u-items-center u-justify-center u-h100')
+
+      article(
+        itemscope
+        itemtype='http://schema.org/WebPage'
+        class='o-container'
+      )
+
+        header(class='u-hide')
+          h1(itemprop='name')=website.name
+
+        block view
+
+        footer
+
+          meta(itemprop='description' content=website.description)
+          meta(itemprop='url' content=website.url)
+
+          div(itemprop='image' itemscope itemtype='http://schema.org/ImageObject')
+            meta(itemprop='contentUrl' content=website.image.url)
+            meta(itemprop='width' content=website.image.width)
+            meta(itemprop='height' content=website.image.height)
+
+          meta(itemprop='dateCreated' content=website.dateCreated)
+          meta(itemprop='datePublished' content=website.datePublished)
+          meta(itemprop='dateModified' content=website.dateModified)
+
+          if author
+
+            div(itemprop='author' itemscope itemtype='http://schema.org/Person')
+              meta(itemprop='name' content=author.name)
+              meta(itemprop='description' content=author.description)
+              meta(itemprop='jobTitle' content=author.jobTitle)
+              meta(itemprop='url' content=author.url)
+              meta(itemprop='email' content=author.email)
+              div(itemprop='image' itemscope itemtype='http://schema.org/ImageObject')
+                meta(itemprop='contentUrl' content=author.image.url)
+                meta(itemprop='width' content=author.image.width)
+                meta(itemprop='height' content=author.image.height)
 
     block scripts
