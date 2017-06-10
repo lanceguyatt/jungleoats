@@ -19,21 +19,21 @@
   },
   "license": "ISC",
   "dependencies": {
-    "serve": "^5.0.3"
+    "serve": "^5.2.2"
   },
   "devDependencies": {
-    "autoprefixer": "^6.7.7",
-    "css-mqpacker": "^5.0.1",
+    "autoprefixer": "^7.1.1",
+    "css-mqpacker": "^6.0.1",
     "cssnano": "^3.10.0",
     "cssnano-cli": "^1.0.5",
-    "eslint": "^3.18.0",
-    "eslint-config-airbnb-base": "^11.1.1",
-    "eslint-plugin-import": "^2.2.0",
-    "moment": "^2.18.0",
-    "postcss": "^5.2.16",
-    "postcss-cli": "^3.0.0",
-    "postcss-custom-properties": "^5.0.2",
-    "postcss-import": "^9.1.0",
-    "pug": "^2.0.0-beta11"
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.3.0",
+    "moment": "^2.18.1",
+    "postcss": "^6.0.1",
+    "postcss-cli": "^4.0.0",
+    "postcss-custom-properties": "^6.0.1",
+    "postcss-import": "^10.0.0",
+    "pug": "^2.0.0-rc.2"
   }
 }

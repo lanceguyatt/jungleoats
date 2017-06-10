@@ -1,7 +1,5 @@
 const moment = require('moment');
-const pkg = require('../package.json');
-
-const { description } = pkg;
+const { description } = require('../package.json');
 
 module.exports = {
     name: 'Jungle Oats',
