@@ -7,7 +7,7 @@
     "type": "git",
     "url": "git@github.com:lanceguyatt/jungleoats.git"
   },
-  "private": "true",
+  "private": true,
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
