@@ -31,6 +31,6 @@
     "postcss-cli": "^6.0.0",
     "postcss-custom-properties": "^8.0.8",
     "postcss-import": "^12.0.0",
-    "pug": "^2.0.0-rc.2"
+    "pug": "^3.0.1"
   }
 }
