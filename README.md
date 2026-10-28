@@ -17,13 +17,19 @@ Click the game first to give it keyboard focus. Needs a keyboard, so it is best 
 
 ## Development
 
-Built with [Vite](https://vite.dev/) and plain CSS. There are no local dependencies: install Vite globally once, then run it from the project folder.
+Built with [Vite](https://vite.dev/) and plain CSS. There are no local dependencies: Vite is fetched and run under the [Bun](https://bun.sh/) runtime with `bunx --bun vite`. The `package.json` scripts wrap this:
 
 ```sh
-pnpm add -g vite   # or: npm i -g vite
-vite               # start the dev server
-vite build         # build to dist/
-vite preview       # preview the production build
+bun dev            # start the dev server
+bun run build      # build to dist/
+bun run preview    # preview the production build
+```
+
+To type bare `vite` instead, add this function to `~/.zshrc`:
+
+```sh
+# Run Vite under the Bun runtime
+vite() { bunx --bun vite "$@"; }
 ```
 
 Formatting is Zed's built-in Prettier, configured by `.prettierrc.json`.
@@ -43,7 +49,7 @@ netlify.toml     Netlify build settings
 
 ## Deployment
 
-Hosted on [Netlify](https://www.netlify.com/). Netlify runs `npx -y vite@7 build` (set in `netlify.toml`) and publishes `dist/`, so no dependencies need installing there either.
+Hosted on [Netlify](https://www.netlify.com/). Netlify runs `bunx --bun vite@7 build` (set in `netlify.toml`) and publishes `dist/`, so no dependencies need installing there either.
 
 ## Licence
 
