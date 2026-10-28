@@ -12,8 +12,8 @@ Location: London, United Kingdom
 Language: English
 Doctype: HTML5
 Standards: HTML5, CSS4
-Components: Express 4, PostCSS, Pug
-Software: Atom, Sketch
+Components: Vite, Tailwind CSS 4
+Software: Freehand MX, Flash MX, Zed
 
 /* THANKS */
 

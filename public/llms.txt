@@ -1,0 +1,12 @@
+# Jungle Oats
+
+> A platform game Lance Guyatt made in 2005 with Freehand MX and Flash MX, playable in the browser via the Ruffle Flash emulator.
+
+- Genre: platform game, single player
+- Controls: arrow keys to move, spacebar to jump (click the game first to give it keyboard focus)
+- Needs a keyboard, so it is best played on desktop
+
+## Links
+
+- [Play Jungle Oats](https://jungleoats.netlify.app/): the game and a short description
+- [Lance Guyatt](https://lanceguyatt.com/): the author's website

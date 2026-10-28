@@ -1,8 +1,0 @@
-{
-    "extends": "airbnb-base",
-    "rules": {
-        "indent": ["error", 4],
-        "import/no-extraneous-dependencies": 0,
-        "global-require": 0
-    }
-}
