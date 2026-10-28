@@ -37,7 +37,7 @@
         const ruffle = window.RufflePlayer.newest()
         if (!ruffle) return
         const player = ruffle.createPlayer()
-        player.className = 'block size-full'
+        player.className = 'game-player'
         player.setAttribute('role', 'application')
         player.setAttribute('aria-label', '{{ name }} game')
         const container = document.getElementById('jungleoats')
@@ -80,9 +80,9 @@
       }
     </script>
   </head>
-  <body class="min-h-dvh grid bg-fixed place-items-center bg-sky-300 text-white bg-sky-gradient">
-    <main class="w-full">
-      <article class="container grid grid-cols-1 gap-y-8 text-center mx-auto px-6">
+  <body class="bg-sky-gradient">
+    <main>
+      <article>
         <header>
           <h1>{{ name }}</h1>
           <p>{{ description }}</p>
@@ -94,7 +94,7 @@
         </p>
         <p>Needs a keyboard: best played on desktop.</p>
         <footer>
-          <p>Made by <a href="{{ author.url }}" class="underline">{{ author.name }}</a></p>
+          <p>Made by <a href="{{ author.url }}">{{ author.name }}</a></p>
         </footer>
       </article>
     </main>

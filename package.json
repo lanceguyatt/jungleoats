@@ -2,7 +2,7 @@
   "name": "jungleoats",
   "version": "2.0.0",
   "description": "A platform game I made way back in 2005 with Freehand MX and Flash MX.",
-  "license": "ISC",
+  "license": "MIT",
   "author": "Lance Guyatt <lance@lanceguyatt.com>",
   "repository": {
     "type": "git",
@@ -10,15 +10,8 @@
   },
   "type": "module",
   "scripts": {
-    "dev": "vp dev",
-    "build": "vp build",
-    "preview": "vp preview",
-    "format": "vp fmt"
-  },
-  "devDependencies": {
-    "@tailwindcss/vite": "^4.3.3",
-    "tailwindcss": "^4.3.3",
-    "vite": "catalog:",
-    "vite-plus": "catalog:"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   }
 }

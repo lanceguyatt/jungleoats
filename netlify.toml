@@ -1,0 +1,3 @@
+[build]
+  command = "npx -y vite@7 build"
+  publish = "dist"

@@ -1,5 +1,3 @@
-import { defineConfig } from 'vite-plus'
-import tailwindcss from '@tailwindcss/vite'
 import locals from './locals.js'
 
 // Replaces {{ key }} or {{ key.nested }} placeholders in HTML with values from locals.js
@@ -12,16 +10,12 @@ const htmlLocals = () => ({
     ),
 })
 
-export default defineConfig({
+export default {
   root: 'src',
   publicDir: '../public',
   build: {
     outDir: '../dist',
     emptyOutDir: true,
   },
-  plugins: [tailwindcss(), htmlLocals()],
-  fmt: {
-    singleQuote: true,
-    semi: false,
-  },
-})
+  plugins: [htmlLocals()],
+}
