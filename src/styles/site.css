@@ -28,3 +28,26 @@
   --color-monkey-face: #ffcc99;
   --color-monkey-mouth: #ff3300;
 }
+
+/* Sky backdrop, running through every sky stop from top to bottom */
+@utility bg-sky-gradient {
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-sky-100),
+    var(--color-sky-200),
+    var(--color-sky-300),
+    var(--color-sky-400),
+    var(--color-sky-500),
+    var(--color-sky-600),
+    var(--color-sky-700),
+    var(--color-sky-800),
+    var(--color-sky-900)
+  );
+}
+
+/* Game stage at the SWF's 550x450 ratio: fills the column, never taller than the viewport, never above 2x native */
+@utility game-stage {
+  width: min(100%, 1100px, calc((100dvh - 4rem) * 550 / 450));
+  aspect-ratio: 550 / 450;
+  margin-inline: auto;
+}

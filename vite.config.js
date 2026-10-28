@@ -1,19 +1,22 @@
-import { defineConfig } from "vite-plus";
-import tailwindcss from "@tailwindcss/vite";
-import locals from "./locals.js";
+import { defineConfig } from 'vite-plus'
+import tailwindcss from '@tailwindcss/vite'
+import locals from './locals.js'
 
-// Replaces {{ key }} placeholders in HTML with values from locals.js
+// Replaces {{ key }} or {{ key.nested }} placeholders in HTML with values from locals.js
 const htmlLocals = () => ({
-  name: "html-locals",
+  name: 'html-locals',
   transformIndexHtml: (html) =>
-    html.replace(/\{\{\s*(\w+)\s*\}\}/g, (match, key) => locals[key] ?? match),
-});
+    html.replace(
+      /\{\{\s*([\w.]+)\s*\}\}/g,
+      (match, path) => path.split('.').reduce((value, key) => value?.[key], locals) ?? match,
+    ),
+})
 
 export default defineConfig({
-  root: "src",
-  publicDir: "../public",
+  root: 'src',
+  publicDir: '../public',
   build: {
-    outDir: "../dist",
+    outDir: '../dist',
     emptyOutDir: true,
   },
   plugins: [tailwindcss(), htmlLocals()],
@@ -21,4 +24,4 @@ export default defineConfig({
     singleQuote: true,
     semi: false,
   },
-});
+})

@@ -4,17 +4,11 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>{{ title }}</title>
-    <meta
-      name="description"
-      content="{{ description }}"
-    />
+    <meta name="description" content="{{ description }}" />
     <link rel="canonical" href="{{ url }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:title" content="{{ name }}" />
-    <meta
-      property="og:description"
-      content="{{ description }}"
-    />
+    <meta property="og:description" content="{{ description }}" />
     <meta property="og:url" content="{{ url }}" />
     <meta property="og:image" content="{{ image }}" />
     <meta property="og:image:width" content="492" />
@@ -22,13 +16,9 @@
     <meta property="og:site_name" content="{{ name }}" />
     <meta property="og:type" content="website" />
     <meta name="twitter:title" content="{{ name }}" />
-    <meta
-      name="twitter:description"
-      content="{{ description }}"
-    />
+    <meta name="twitter:description" content="{{ description }}" />
     <meta name="twitter:image" content="{{ image }}" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:creator" content="{{ twitter }}" />
 
     <link rel="icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
@@ -40,18 +30,20 @@
 
     <link rel="stylesheet" href="/styles/site.css" />
     <script>
-      window.RufflePlayer = window.RufflePlayer || {};
-      window.addEventListener("load", () => {
-        const ruffle = window.RufflePlayer.newest();
-        if (!ruffle) return;
-        const player = ruffle.createPlayer();
-        player.className = "mx-auto block aspect-[550/450] w-full";
-        player.setAttribute("role", "application");
-        player.setAttribute("aria-label", "{{ name }} game");
-        const container = document.getElementById("jungleoats");
-        container.replaceChildren(player);
-        player.ruffle().load("/assets/jungleoats.swf");
-      });
+      window.RufflePlayer = window.RufflePlayer || {}
+      // Hide Ruffle's own splash so the stage's title screen shows while the SWF loads
+      window.RufflePlayer.config = { splashScreen: false }
+      window.addEventListener('load', () => {
+        const ruffle = window.RufflePlayer.newest()
+        if (!ruffle) return
+        const player = ruffle.createPlayer()
+        player.className = 'block size-full'
+        player.setAttribute('role', 'application')
+        player.setAttribute('aria-label', '{{ name }} game')
+        const container = document.getElementById('jungleoats')
+        container.replaceChildren(player)
+        player.ruffle().load('/assets/jungleoats.swf')
+      })
     </script>
     <script
       src="https://unpkg.com/@ruffle-rs/ruffle@0.7.1/ruffle.js"
@@ -80,37 +72,29 @@
         "dateModified": "2026-10-28T05:38:24+01:00",
         "author": {
           "@type": "Person",
-          "name": "{{ author }}",
+          "name": "{{ author.name }}",
           "description": "21st Century Digital Boy",
           "jobTitle": "Web Developer",
-          "url": "{{ authorUrl }}"
+          "url": "{{ author.url }}"
         }
       }
     </script>
   </head>
-  <body class="min-h-dvh bg-sky-300">
-    <main class="flex h-full flex-col items-center justify-center">
-      <article class="container text-center mx-auto px-6">
+  <body class="min-h-dvh grid bg-fixed place-items-center bg-sky-300 text-white bg-sky-gradient">
+    <main class="w-full">
+      <article class="container grid grid-cols-1 gap-y-8 text-center mx-auto px-6">
         <header>
-          <h1 class="text-oats">{{ name }}</h1>
+          <h1>{{ name }}</h1>
           <p>{{ description }}</p>
         </header>
-        <div id="jungleoats">
-          <img
-            class="mx-auto"
-            src="/assets/jungleoats.png"
-            width="492"
-            height="492"
-            alt="Jungle Oats title screen: a monkey on jungle platforms"
-          />
-        </div>
+        <div id="jungleoats" class="game-stage"></div>
         <p>
           Click the game to give it keyboard focus. Use the arrow keys to move and the spacebar to
           jump.
         </p>
         <p>Needs a keyboard: best played on desktop.</p>
         <footer>
-          <p>Made by <a href="{{ authorUrl }}">{{ author }}</a></p>
+          <p>Made by <a href="{{ author.url }}" class="underline">{{ author.name }}</a></p>
         </footer>
       </article>
     </main>

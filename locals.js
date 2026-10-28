@@ -4,7 +4,8 @@ export default {
   description: 'A platform game I made way back in 2005 with Freehand MX and Flash MX.',
   url: 'https://jungleoats.netlify.app/',
   image: 'https://jungleoats.netlify.app/assets/jungleoats.png',
-  author: 'Lance Guyatt',
-  authorUrl: 'https://lanceguyatt.com/',
-  twitter: '@lanceguyatt',
+  author: {
+    name: 'Lance Guyatt',
+    url: 'https://lanceguyatt.com/',
+  },
 }
