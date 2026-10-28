@@ -11,7 +11,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "surge": "vite build && surge -p dist -d jungleoats.surge.sh"
+    "surge": "vite build && surge -p dist -d https://jungleoats.surge.sh"
   },
   "license": "ISC",
   "type": "module",

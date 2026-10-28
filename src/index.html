@@ -1,19 +1,24 @@
 <!doctype html>
-<html dir="ltr" lang="en" prefix="og: http://ogp.me/ns">
+<html dir="ltr" lang="en" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Jungle Oats</title>
+    <title>Jungle Oats – a 2005 Flash platform game</title>
+    <meta
+      name="description"
+      content="A platform game I made way back in 2005 with Freehand MX and Flash MX."
+    />
+    <link rel="canonical" href="https://jungleoats.netlify.app/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:title" content="Jungle Oats" />
     <meta
       property="og:description"
       content="A platform game I made way back in 2005 with Freehand MX and Flash MX."
     />
-    <meta property="og:url" content="http://jungleoats.surge.sh" />
+    <meta property="og:url" content="https://jungleoats.netlify.app/" />
     <meta
       property="og:image"
-      content="http://jungleoats.surge.sh/images/jungleoats.png"
+      content="https://jungleoats.netlify.app/assets/jungleoats.png"
     />
     <meta property="og:image:width" content="492" />
     <meta property="og:image:height" content="492" />
@@ -25,8 +30,8 @@
       content="A platform game I made way back in 2005 with Freehand MX and Flash MX."
     />
     <meta
-      name="twitter:image:src"
-      content="http://jungleoats.surge.sh/images/jungleoats.png"
+      name="twitter:image"
+      content="https://jungleoats.netlify.app/assets/jungleoats.png"
     />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:creator" content="@lanceguyatt" />
@@ -46,27 +51,36 @@
         const ruffle = window.RufflePlayer.newest();
         if (!ruffle) return;
         const player = ruffle.createPlayer();
-        player.className =
-          "mx-auto block aspect-[550/450] w-full max-w-[550px]";
+        player.className = "mx-auto block aspect-[550/450] w-full";
+        player.setAttribute("role", "application");
+        player.setAttribute("aria-label", "Jungle Oats game");
         const container = document.getElementById("jungleoats");
         container.replaceChildren(player);
         player.ruffle().load("/assets/jungleoats.swf");
       });
     </script>
-    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <script
+      src="https://unpkg.com/@ruffle-rs/ruffle@0.7.1/ruffle.js"
+      integrity="sha384-6NrmfJx+zTZZPW41eipMGvyVrfvsDKenrh0v/YJ+nJq0WzzLvOHX6GCcQQ1GbIic"
+      crossorigin="anonymous"
+      defer
+    ></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebPage",
+        "@type": "VideoGame",
         "name": "Jungle Oats",
         "description": "A platform game I made way back in 2005 with Freehand MX and Flash MX.",
-        "url": "http://jungleoats.surge.sh",
+        "url": "https://jungleoats.netlify.app/",
         "image": {
           "@type": "ImageObject",
-          "contentUrl": "http://jungleoats.surge.sh/images/jungleoats.png",
+          "contentUrl": "https://jungleoats.netlify.app/assets/jungleoats.png",
           "width": 492,
           "height": 492
         },
+        "genre": "Platform game",
+        "gamePlatform": "Web browser",
+        "playMode": "SinglePlayer",
         "dateCreated": "2005-11-21",
         "datePublished": "2017-03-13",
         "dateModified": "2026-10-28T05:38:24+01:00",
@@ -75,36 +89,39 @@
           "name": "Lance Guyatt",
           "description": "21st Century Digital Boy",
           "jobTitle": "Web Developer",
-          "url": "http://lanceguyatt.com",
-          "email": "lance@lanceguyatt.com",
-          "image": {
-            "@type": "ImageObject",
-            "contentUrl": "https://media.licdn.com/dms/image/v2/C5603AQEwtv5CV-XVug/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516342932699?e=1795046400&v=beta&t=QMh74M3MTct8_Fjz_QGe_arfw3ny3naBvMdS_dcJ3yI",
-            "width": 200,
-            "height": 200
-          }
+          "url": "https://lanceguyatt.com/"
         }
       }
     </script>
   </head>
-  <body class="min-h-dvh bg-red-500">
-    <div class="flex h-full flex-col items-center justify-center">
-      <article class="container mx-auto bg-green-100">
+  <body class="min-h-dvh bg-sky-300">
+    <main class="flex h-full flex-col items-center justify-center">
+      <article class="container text-center mx-auto px-6">
         <header>
-          <h1>Jungle Oats</h1>
+          <h1 class="text-oats">Jungle Oats</h1>
+          <p>
+            A platform game I made way back in 2005 with Freehand MX and Flash
+            MX.
+          </p>
         </header>
-        <main>
-          <div id="jungleoats">
-            <img
-              class="mx-auto"
-              src="/assets/jungleoats.png"
-              width="492"
-              height="492"
-              alt="This page requires Flash"
-            />
-          </div>
-        </main>
+        <div id="jungleoats">
+          <img
+            class="mx-auto"
+            src="/assets/jungleoats.png"
+            width="492"
+            height="492"
+            alt="Jungle Oats title screen: a monkey on jungle platforms"
+          />
+        </div>
+        <p>
+          Click the game to give it keyboard focus. Use the arrow keys to move
+          and the spacebar to jump.
+        </p>
+        <p>Needs a keyboard: best played on desktop.</p>
+        <footer>
+          <p>Made by <a href="https://lanceguyatt.com/">Lance Guyatt</a></p>
+        </footer>
       </article>
-    </div>
+    </main>
   </body>
 </html>

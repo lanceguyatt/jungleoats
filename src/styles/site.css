@@ -1,1 +1,30 @@
 @import "tailwindcss";
+
+@theme {
+  /* Sky, lightest at the top of the screen to deepest jungle shadow */
+  --color-sky-100: #33ccff;
+  --color-sky-200: #33b5ff;
+  --color-sky-300: #3399ff;
+  --color-sky-400: #2b92ef;
+  --color-sky-500: #1982cc;
+  --color-sky-600: #157ec4;
+  --color-sky-700: #0f6bae;
+  --color-sky-800: #094b92;
+  --color-sky-900: #063c84;
+
+  /* Foliage: vines, leaves and grass */
+  --color-vine: #336600;
+  --color-vine-dark: #006633;
+  --color-leaf: #669933;
+  --color-leaf-light: #4e8147;
+
+  /* Platforms and logo */
+  --color-platform: #996600;
+  --color-oats: #ffff00;
+  --color-ink: #000000;
+
+  /* Monkey */
+  --color-monkey: #660000;
+  --color-monkey-face: #ffcc99;
+  --color-monkey-mouth: #ff3300;
+}
