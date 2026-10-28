@@ -3,46 +3,40 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Jungle Oats – a 2005 Flash platform game</title>
+    <title>{{ title }}</title>
     <meta
       name="description"
-      content="A platform game I made way back in 2005 with Freehand MX and Flash MX."
+      content="{{ description }}"
     />
-    <link rel="canonical" href="https://jungleoats.netlify.app/" />
+    <link rel="canonical" href="{{ url }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta property="og:title" content="Jungle Oats" />
+    <meta property="og:title" content="{{ name }}" />
     <meta
       property="og:description"
-      content="A platform game I made way back in 2005 with Freehand MX and Flash MX."
+      content="{{ description }}"
     />
-    <meta property="og:url" content="https://jungleoats.netlify.app/" />
-    <meta
-      property="og:image"
-      content="https://jungleoats.netlify.app/assets/jungleoats.png"
-    />
+    <meta property="og:url" content="{{ url }}" />
+    <meta property="og:image" content="{{ image }}" />
     <meta property="og:image:width" content="492" />
     <meta property="og:image:height" content="492" />
-    <meta property="og:site_name" content="Jungle Oats" />
+    <meta property="og:site_name" content="{{ name }}" />
     <meta property="og:type" content="website" />
-    <meta name="twitter:title" content="Jungle Oats" />
+    <meta name="twitter:title" content="{{ name }}" />
     <meta
       name="twitter:description"
-      content="A platform game I made way back in 2005 with Freehand MX and Flash MX."
+      content="{{ description }}"
     />
-    <meta
-      name="twitter:image"
-      content="https://jungleoats.netlify.app/assets/jungleoats.png"
-    />
+    <meta name="twitter:image" content="{{ image }}" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:creator" content="@lanceguyatt" />
+    <meta name="twitter:creator" content="{{ twitter }}" />
 
     <link rel="icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
     <link rel="author" href="/humans.txt" type="text/plain" />
 
-    <meta name="apple-mobile-web-website-title" content="Jungle Oats" />
-    <meta name="application-name" content="Jungle Oats" />
+    <meta name="apple-mobile-web-website-title" content="{{ name }}" />
+    <meta name="application-name" content="{{ name }}" />
 
     <link rel="stylesheet" href="/styles/site.css" />
     <script>
@@ -53,7 +47,7 @@
         const player = ruffle.createPlayer();
         player.className = "mx-auto block aspect-[550/450] w-full";
         player.setAttribute("role", "application");
-        player.setAttribute("aria-label", "Jungle Oats game");
+        player.setAttribute("aria-label", "{{ name }} game");
         const container = document.getElementById("jungleoats");
         container.replaceChildren(player);
         player.ruffle().load("/assets/jungleoats.swf");
@@ -69,12 +63,12 @@
       {
         "@context": "https://schema.org",
         "@type": "VideoGame",
-        "name": "Jungle Oats",
-        "description": "A platform game I made way back in 2005 with Freehand MX and Flash MX.",
-        "url": "https://jungleoats.netlify.app/",
+        "name": "{{ name }}",
+        "description": "{{ description }}",
+        "url": "{{ url }}",
         "image": {
           "@type": "ImageObject",
-          "contentUrl": "https://jungleoats.netlify.app/assets/jungleoats.png",
+          "contentUrl": "{{ image }}",
           "width": 492,
           "height": 492
         },
@@ -86,10 +80,10 @@
         "dateModified": "2026-10-28T05:38:24+01:00",
         "author": {
           "@type": "Person",
-          "name": "Lance Guyatt",
+          "name": "{{ author }}",
           "description": "21st Century Digital Boy",
           "jobTitle": "Web Developer",
-          "url": "https://lanceguyatt.com/"
+          "url": "{{ authorUrl }}"
         }
       }
     </script>
@@ -98,11 +92,8 @@
     <main class="flex h-full flex-col items-center justify-center">
       <article class="container text-center mx-auto px-6">
         <header>
-          <h1 class="text-oats">Jungle Oats</h1>
-          <p>
-            A platform game I made way back in 2005 with Freehand MX and Flash
-            MX.
-          </p>
+          <h1 class="text-oats">{{ name }}</h1>
+          <p>{{ description }}</p>
         </header>
         <div id="jungleoats">
           <img
@@ -114,12 +105,12 @@
           />
         </div>
         <p>
-          Click the game to give it keyboard focus. Use the arrow keys to move
-          and the spacebar to jump.
+          Click the game to give it keyboard focus. Use the arrow keys to move and the spacebar to
+          jump.
         </p>
         <p>Needs a keyboard: best played on desktop.</p>
         <footer>
-          <p>Made by <a href="https://lanceguyatt.com/">Lance Guyatt</a></p>
+          <p>Made by <a href="{{ authorUrl }}">{{ author }}</a></p>
         </footer>
       </article>
     </main>
