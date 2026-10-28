@@ -1,36 +1,23 @@
 {
   "name": "jungleoats",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A platform game I made way back in 2005 with Freehand MX and Flash MX.",
   "author": "Lance Guyatt <lance@lanceguyatt.com>",
   "repository": {
     "type": "git",
     "url": "git@github.com:lanceguyatt/jungleoats.git"
   },
-  "private": true,
-  "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "pug": "pug src/templates/views --out build --obj data/index.js",
-    "postcss": "postcss src/styles/site.css -d build/styles --no-map true",
-    "cssnano": "cssnano build/styles/site.css build/styles/site.css",
-    "build": "NODE_ENV=production && npm run postcss && npm run cssnano && npm run pug",
-    "deploy": "npm run build && surge -p build -d jungleoats.surge.sh"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "surge": "vite build && surge -p dist -d jungleoats.surge.sh"
   },
   "license": "ISC",
+  "type": "module",
   "devDependencies": {
-    "autoprefixer": "^9.2.0",
-    "css-mqpacker": "^7.0.0",
-    "cssnano": "^4.1.4",
-    "cssnano-cli": "^1.0.5",
-    "eslint": "^5.7.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.3.0",
-    "moment": "^2.18.1",
-    "postcss": "^7.0.5",
-    "postcss-cli": "^6.0.0",
-    "postcss-custom-properties": "^8.0.8",
-    "postcss-import": "^12.0.0",
-    "pug": "^2.0.0-rc.2"
+    "@tailwindcss/vite": "^4.3.3",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.5"
   }
 }

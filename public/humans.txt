@@ -13,7 +13,7 @@ Language: English
 Doctype: HTML5
 Standards: HTML5, CSS4
 Components: Express 4, PostCSS, Pug
-Software: Atom, Sketch
+Software: Freehand MX, Flash MX, Zed
 
 /* THANKS */
 
