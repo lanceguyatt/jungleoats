@@ -1,134 +1,195 @@
-/* Palette */
 :root {
-  /* Sky, lightest at the top of the screen to deepest jungle shadow */
-  --color-sky-100: #33ccff;
-  --color-sky-200: #33b5ff;
-  --color-sky-300: #3399ff;
-  --color-sky-400: #2b92ef;
-  --color-sky-500: #1982cc;
-  --color-sky-600: #157ec4;
-  --color-sky-700: #0f6bae;
-  --color-sky-800: #094b92;
-  --color-sky-900: #063c84;
-
-  /* Foliage: vines, leaves and grass */
-  --color-vine: #336600;
-  --color-vine-dark: #006633;
-  --color-leaf: #669933;
-  --color-leaf-light: #4e8147;
-
-  /* Platforms and logo */
-  --color-platform: #996600;
-  --color-oats: #ffff00;
-  --color-ink: #000000;
-
-  /* Monkey */
-  --color-monkey: #660000;
-  --color-monkey-face: #ffcc99;
-  --color-monkey-mouth: #ff3300;
+  --sky-100: #33ccff;
+  --sky-200: #33b5ff;
+  --sky-300: #3399ff;
+  --sky-400: #2b92ef;
+  --sky-500: #1982cc;
+  --sky-600: #157ec4;
+  --sky-700: #0f6bae;
+  --sky-800: #094b92;
+  --sky-900: #063c84;
+  --vine: #336600;
+  --vine-dark: #006633;
+  --leaf: #669933;
+  --leaf-light: #4e8147;
+  --platform: #996600;
+  --oats: #ffff00;
+  --ink: #000;
+  --monkey: #660000;
+  --face: #ffcc99;
+  --mouth: #ff3300;
+  --text: #fff;
+  --heading: #ffff00;
+  --subheading: #ffcc99;
+  --card: rgba(6, 60, 132, 0.72);
+  --card-border: rgba(255, 255, 255, 0.22);
+  color-scheme: dark;
 }
-
-/* Minimal reset: the bits of Tailwind preflight the page relies on */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --card: rgba(6, 40, 100, 0.8);
+  }
+}
 *,
-::before,
-::after {
+:before,
+:after {
   box-sizing: border-box;
 }
-
-body,
-h1,
-p {
-  margin: 0;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: env(safe-area-inset-top, 0px);
 }
-
-h1 {
-  font-size: inherit;
-  font-weight: inherit;
-}
-
-a {
-  color: inherit;
-}
-
 body {
-  min-height: 100dvh;
-  display: grid;
-  place-items: center;
-  font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
-  line-height: 1.5;
-  color: #fff;
-  background-color: var(--color-sky-300);
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: linear-gradient(
+    to bottom,
+    var(--sky-100),
+    var(--sky-300) 30%,
+    var(--sky-600) 60%,
+    var(--sky-900)
+  );
   background-attachment: fixed;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
-
-main {
-  width: 100%;
-}
-
-/* Centred column, capped at the same breakpoints as Tailwind's container */
-article {
-  width: 100%;
+.wrap {
+  max-width: 64rem;
   margin-inline: auto;
   padding-inline: 1.5rem;
-  display: grid;
-  row-gap: 2rem;
+}
+/* hero */
+.hero {
   text-align: center;
+  padding-block: clamp(3rem, 10vw, 7rem) 3rem;
+}
+.eyebrow {
+  display: inline-block;
+  background: var(--vine-dark);
+  color: var(--oats);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 2px solid var(--leaf);
+}
+h1 {
+  font-size: clamp(3rem, 11vw, 7rem);
+  line-height: 1;
+  margin: 1.2rem 0 1rem;
+  color: var(--heading);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-shadow:
+    0 4px 0 var(--platform),
+    0 8px 0 var(--monkey),
+    0 14px 24px rgba(0, 0, 0, 0.35);
+}
+.lead {
+  font-size: clamp(1.1rem, 2.6vw, 1.6rem);
+  color: #fff;
+  max-width: 36rem;
+  margin: 0 auto 2rem;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+.btn {
+  display: inline-block;
+  background: var(--oats);
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 1rem 2.2rem;
+  border-radius: 0.9rem;
+  border-bottom: 6px solid var(--platform);
+  transition: transform 0.15s;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+.note {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: var(--subheading);
+}
+/* sections */
+h2 {
+  font-size: clamp(1.8rem, 4.5vw, 2.75rem);
+  line-height: 1.15;
+  margin: 0 0 1rem;
+  color: var(--heading);
+  text-shadow: 0 2px 0 var(--vine-dark);
+}
+h3 {
+  font-size: 1.35rem;
+  margin: 0 0 0.4rem;
+  color: var(--subheading);
+}
+section {
+  padding-block: 2.5rem;
+}
+.grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  backdrop-filter: blur(6px);
+}
+.card p {
+  margin: 0;
+  color: #e8f3ff;
+}
+.keys {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+kbd {
+  background: var(--oats);
+  color: var(--ink);
+  font:
+    700 0.95rem ui-monospace,
+    monospace;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.4rem;
+  border-bottom: 3px solid var(--platform);
+}
+/* jungle floor */
+.floor {
+  margin-top: 2rem;
+  background: linear-gradient(var(--leaf), var(--vine) 40%, var(--vine-dark));
+  border-top: 10px solid var(--platform);
+  text-align: center;
+  padding: 2.5rem 1.5rem calc(2.5rem + env(safe-area-inset-bottom, 0px));
+}
+.floor p {
+  margin: 0.3rem 0;
+  color: #fff;
+}
+.floor a {
+  color: var(--oats);
+  font-weight: 700;
 }
 
-@media (width >= 40rem) {
-  article {
-    max-width: 40rem;
-  }
-}
-
-@media (width >= 48rem) {
-  article {
-    max-width: 48rem;
-  }
-}
-
-@media (width >= 64rem) {
-  article {
-    max-width: 64rem;
-  }
-}
-
-@media (width >= 80rem) {
-  article {
-    max-width: 80rem;
-  }
-}
-
-@media (width >= 96rem) {
-  article {
-    max-width: 96rem;
-  }
-}
-
-/* Sky backdrop, running through every sky stop from top to bottom */
-.bg-sky-gradient {
-  background-image: linear-gradient(
-    to bottom,
-    var(--color-sky-100),
-    var(--color-sky-200),
-    var(--color-sky-300),
-    var(--color-sky-400),
-    var(--color-sky-500),
-    var(--color-sky-600),
-    var(--color-sky-700),
-    var(--color-sky-800),
-    var(--color-sky-900)
-  );
-}
-
-/* Game stage at the SWF's 550x450 ratio: fills the column, never taller than the viewport, never above 2x native */
 .game-stage {
   width: min(100%, 1100px, calc((100dvh - 4rem) * 550 / 450));
   aspect-ratio: 550 / 450;
   margin-inline: auto;
 }
-
-/* Ruffle player, created by the inline script, fills the stage */
 .game-player {
   display: block;
   width: 100%;

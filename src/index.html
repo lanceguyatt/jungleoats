@@ -80,23 +80,54 @@
       }
     </script>
   </head>
-  <body class="bg-sky-gradient">
+  <body>
     <main>
-      <article>
-        <header>
-          <h1>{{ name }}</h1>
-          <p>{{ description }}</p>
-        </header>
-        <div id="jungleoats" class="game-stage"></div>
-        <p>
-          Click the game to give it keyboard focus. Use the arrow keys to move and the spacebar to
-          jump.
+      <header class="hero wrap">
+        <span class="eyebrow">Flash platformer · 2005</span>
+        <h1>Jungle Oats</h1>
+        <p class="lead">
+          A platform game made way back in 2005 with Freehand MX and Flash MX. Swing, jump and grab
+          the oats.
         </p>
-        <p>Needs a keyboard: best played on desktop.</p>
-        <footer>
-          <p>Made by <a href="{{ author.url }}">{{ author.name }}</a></p>
-        </footer>
-      </article>
+        <a class="btn" href="https://jungleoats.netlify.app/">▶ Play the game</a>
+        <p class="note">Needs a keyboard: best played on desktop.</p>
+      </header>
+
+      <div id="jungleoats" class="game-stage"></div>
+
+      <section class="wrap" aria-labelledby="how">
+        <h2 id="how">How to play</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Focus</h3>
+            <p>Click the game once to give it keyboard focus.</p>
+          </div>
+          <div class="card">
+            <h3>Move</h3>
+            <p>Run left and right through the jungle.</p>
+            <div class="keys"><kbd>←</kbd><kbd>→</kbd></div>
+          </div>
+          <div class="card">
+            <h3>Jump</h3>
+            <p>Leap across platforms and gaps.</p>
+            <div class="keys"><kbd>Space</kbd></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap" aria-labelledby="about">
+        <h2 id="about">About the game</h2>
+        <div class="card">
+          <p>
+            Jungle Oats was drawn in Macromedia Freehand MX and brought to life in Flash MX. It is a
+            small piece of web history, kept playable for anyone who remembers the Flash era.
+          </p>
+        </div>
+      </section>
+
+      <footer class="floor">
+        <p>Made by <a href="https://lanceguyatt.com/">Lance Guyatt</a></p>
+      </footer>
     </main>
   </body>
 </html>
